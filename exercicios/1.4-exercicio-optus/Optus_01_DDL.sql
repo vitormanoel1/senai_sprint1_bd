@@ -1,0 +1,43 @@
+CREATE TABLE Empresa
+(
+	IdEmpresa INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(200),
+	Ramo VARCHAR(200),
+	Gerencia VARCHAR(200)
+);
+
+CREATE TABLE Artista
+(
+	IdArtista INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(200),
+);
+
+CREATE TABLE Album
+(
+	IdAlbum INT PRIMARY KEY IDENTITY,
+	Titulo VARCHAR(200),
+	DataLanc DATETIME,
+	localizacao VARCHAR(200),
+	Minutos TIME,
+	Condicao VARCHAR(200),
+	IdEmpresa INT FOREIGN KEY REFERENCES Empresa(IdEmpresa),
+	IdArtista INT FOREIGN KEY REFERENCES Artista(IdArtista)
+);
+
+CREATE TABLE Estilo
+(
+	IdEstilo INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(200),
+	IdAlbum INT FOREIGN KEY REFERENCES Album(IdAlbum)
+);
+
+CREATE TABLE Usuarios
+(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(200),
+	Email VARCHAR(200),
+	Senha VARCHAR(200),
+	TipoPermissao VARCHAR(200),
+	IdAlbum INT FOREIGN KEY REFERENCES Album(IdAlbum),
+	IdEmpresa INT FOREIGN KEY REFERENCES Empresa(IdEmpresa)
+);
