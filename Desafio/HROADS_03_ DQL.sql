@@ -56,6 +56,18 @@ SELECT PERSONAGEM.IdPERSONAGEM, PERSONAGEM.NOME, CLASSE.IdCLASSE, CLASSE.NOME FR
 INNER JOIN CLASSE
 ON PERSONAGEM.IdCLASSE = CLASSE.IdCLASSE;
 
+--Selecionar todas as classes e suas respectivas habilidades;
+--------------------------------------------------------------
+
+SELECT CLASSE.NOME, HABILIDADE.NOME FROM CLASSE
+INNER JOIN HABILIDADE
+ON CLASSE.IdHABILIDADE = HABILIDADE.IdHABILIDADE;
+
+--Selecionar todas as HABILIDADES e suas respectivas CLASSES;
+--------------------------------------------------------------
+SELECT HABILIDADE.NOME, CLASSE.NOME FROM HABILIDADE
+INNER JOIN CLASSE
+ON HABILIDADE.IdHABILIDADE = CLASSE.IdHABILIDADE;
 
 --REALIZAR A CONTAGEM DE QUANTAS HABILIDADES ESTÃO CADASTRADAS
 --------------------------------------------------------------
