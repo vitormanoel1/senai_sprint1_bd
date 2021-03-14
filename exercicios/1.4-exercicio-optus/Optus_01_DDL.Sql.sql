@@ -1,3 +1,5 @@
+USE Optus;
+
 CREATE TABLE Empresa
 (
 	IdEmpresa INT PRIMARY KEY IDENTITY,
